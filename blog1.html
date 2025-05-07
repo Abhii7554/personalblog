@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding JavaScript Closures</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Abhishek Blog</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="blog-detail">
+    <h1>Understanding JavaScript Closures</h1>
+    <p class="blog-meta">By <strong>Abhishek Patel</strong> | Tags: <span>#JavaScript</span>, <span>#WebDevelopment</span></p>
+    
+    <article class="blog-content">
+      <p>
+        Closures are one of the most powerful and often misunderstood features of JavaScript. A closure gives you access to an outer function's scope from an inner function.
+      </p>
+      <p>
+        In JavaScript, closures are created every time a function is created. Let’s look at a simple example:
+      </p>
+      <pre><code>
+function outer() {
+  let counter = 0;
+  return function inner() {
+    counter++;
+    console.log(counter);
+  };
+}
+
+const increment = outer();
+increment(); // 1
+increment(); // 2
+      </code></pre>
+      <p>
+        This works because the inner function keeps a reference to the `counter` variable even after `outer` has finished executing. That’s a closure.
+      </p>
+      <p>
+        Closures allow for powerful patterns like data privacy, function factories, and more.
+      </p>
+    </article>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:patelabhishek7654@gmail.com">patelabhishek7654@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/abhishek-patel-595055286" target="_blank">Connect Here</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Abhishek Patel. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
